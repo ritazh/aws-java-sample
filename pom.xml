@@ -18,8 +18,13 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>
-            <version>1.9.6</version>
+            <version>1.10.39</version>
         </dependency>
+        <dependency>
+		  <groupId>com.google.guava</groupId>
+		  <artifactId>guava</artifactId>
+		  <version>14.0.1</version>
+		</dependency>
     </dependencies>
 
     <build>
