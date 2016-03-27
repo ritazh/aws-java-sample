@@ -26,7 +26,7 @@ This sample application connects to an S3 API compatible storage backend.
 - It can upload a large file using multipart upload UploadPartRequest.
 - It can upload a large file using multipart upload TransferManager.
 - It can list all objects in a container/bucket.
-- It can delete an object in a container/bucket.
+- It can delete all objects in a container/bucket.
 - It can delete a container/bucket.
 
 
