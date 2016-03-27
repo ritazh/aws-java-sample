@@ -332,22 +332,14 @@ public class S3Sample {
              */
             System.out.println("Listing objects");
             objectListing = s3.listObjects(new ListObjectsRequest()
-                    .withBucketName(bucketName)
-                    .withPrefix("My"));
+                    .withBucketName(bucketName));
             for (S3ObjectSummary objectSummary : objectListing.getObjectSummaries()) {
                 System.out.println(" - " + objectSummary.getKey() + "  " +
                         "(size = " + objectSummary.getSize() + ")");
+                System.out.println("Deleting objects...\n");
+                s3.deleteObject(bucketName, objectSummary.getKey());
             }
             System.out.println();
-
-            /*
-             * Delete an object - Unless versioning has been turned on for your bucket,
-             * there is no way to undelete an object, so use caution when deleting objects.
-             */
-            System.out.println("Deleting objects...\n");
-            s3.deleteObject(bucketName, key);
-            s3.deleteObject(bucketName, keylarge);
-            s3.deleteObject(bucketName, keylargeTM);
 
             /*
              * Delete a bucket - A bucket must be completely empty before it can be
